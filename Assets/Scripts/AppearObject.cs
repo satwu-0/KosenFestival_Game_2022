@@ -17,25 +17,6 @@ public class AppearObject : MonoBehaviour
     private float appearXPosition;
 
     private Vector2 appearPosition;
-    
-    void Start ()
-    {
-        StartCoroutine ("TestAppear");
-    }
-
-    //動きの確認用の処理
-    private IEnumerator TestAppear() 
-    {
-        var testCount = 0;
-        var maxTestCount = 15;
-        float intervalSeconds = 1f;
-        while(testCount<maxTestCount)
-        {
-            RandomAppear();
-            testCount++;
-            yield return new WaitForSeconds (intervalSeconds);
-        }
-    }
 
     void RandomAppear()
     {
