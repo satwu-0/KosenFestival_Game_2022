@@ -15,7 +15,6 @@ public class FallObject : MonoBehaviour
         if(other.gameObject.CompareTag("Ground"))
         {
             Destroy(this.gameObject);
-            DOTween.Kill(this.transform);
         }
     }
 
