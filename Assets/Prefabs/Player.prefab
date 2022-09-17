@@ -128,3 +128,4 @@ MonoBehaviour:
   playerSpeed: 4
   playerFastSpeed: 8
   upForce: 350
+  rb: {fileID: 7549794762804099701}

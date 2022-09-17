@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float upForce = 350f;
 
+    [SerializeField]
     private Rigidbody rb;
     
     private bool isGround;
@@ -28,16 +29,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
-
     void FixedUpdate()
     {
+        playerNowSpeed = (Input.GetKey(KeyCode.LeftShift)) ? playerFastSpeed : playerSpeed;
         MovePlayer();
-        MoveFastPlayer();
     }
 
     /// <summary>
@@ -47,19 +42,19 @@ public class Player : MonoBehaviour
     {
         Vector3 playerPos = transform.position;
 
-        if(Input.GetKey(KeyCode.D))
+        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             playerPos.x += playerNowSpeed * Time.deltaTime;
-            transform.rotation = Quaternion.Euler(0,0,270);
+            //transform.rotation = Quaternion.Euler(0,0,270);
         } 
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             playerPos.x -= playerNowSpeed * Time.deltaTime;
-            transform.rotation = Quaternion.Euler(0,0,90);
+            //transform.rotation = Quaternion.Euler(0,0,90);
         }
         if (isGround == true)
         {
-            if(Input.GetKey(KeyCode.Space))
+            if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
             {
                 isGround = false;
                 rb.AddForce(new Vector3(0, upForce, 0));
@@ -68,11 +63,5 @@ public class Player : MonoBehaviour
 
         transform.position = playerPos;
     }
-
-    void MoveFastPlayer()
-    {
-        playerNowSpeed = (Input.GetKey(KeyCode.LeftShift)) ? playerFastSpeed : playerSpeed;
-    }
-
 
 }
