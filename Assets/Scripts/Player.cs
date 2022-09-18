@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// プレイヤーの動作関係のクラス
+/// </summary>
 public class Player : MonoBehaviour
 {
     [SerializeField]
@@ -42,12 +44,12 @@ public class Player : MonoBehaviour
     {
         Vector3 playerPos = transform.position;
 
-        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if(Input.GetAxisRaw("Horizontal") > 0)
         {
             playerPos.x += playerNowSpeed * Time.deltaTime;
             //transform.rotation = Quaternion.Euler(0,0,270);
         } 
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if(Input.GetAxisRaw("Horizontal") < 0)
         {
             playerPos.x -= playerNowSpeed * Time.deltaTime;
             //transform.rotation = Quaternion.Euler(0,0,90);
