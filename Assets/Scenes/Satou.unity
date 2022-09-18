@@ -301,7 +301,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 70120424}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
         m_MethodName: OnClicked
         m_Mode: 1
         m_Arguments:
@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c9ff2642f886e45b13ce39791aea68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 0
 --- !u!1 &102561610
 GameObject:
   m_ObjectHideFlags: 0
