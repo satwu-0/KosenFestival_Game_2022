@@ -16,6 +16,12 @@ public class FallObject : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        //プレイヤーと衝突して消える処理
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 }
