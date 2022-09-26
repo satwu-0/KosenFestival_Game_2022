@@ -17,7 +17,7 @@ public class AppearObject : MonoBehaviour
     private float appearXPosition;
 
     private Vector2 appearPosition;
-
+    
     void RandomAppear()
     {
         appearXPosition = Random.Range(MinXPosition,MaxXPosition);
