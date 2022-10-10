@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 12883768}
+  limitSeconds: 30
 --- !u!4 &860861796
 Transform:
   m_ObjectHideFlags: 0
@@ -684,7 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appearObject: {fileID: 8279950087740416584, guid: f77f92e18e442ce458c4cedfa73e2f63, type: 3}
-  AppearInterval: 1
+  appearIntervalSeconds: 1
 --- !u!1 &1774012452
 GameObject:
   m_ObjectHideFlags: 0
