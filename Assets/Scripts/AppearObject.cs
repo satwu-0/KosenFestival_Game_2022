@@ -9,6 +9,8 @@ public class AppearObject : MonoBehaviour
 {
     [SerializeField]
     private GameObject appearObject;
+    [SerializeField]
+    private float AppearInterval;
 
     private const float MinXPosition = -5.0f;
     private const float MaxXPosition = 5.0f;
@@ -17,6 +19,20 @@ public class AppearObject : MonoBehaviour
     private float appearXPosition;
 
     private Vector2 appearPosition;
+
+        void Start ()
+    {
+        StartCoroutine (Appear());
+    }
+
+    private IEnumerator Appear() 
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds (AppearInterval);
+            RandomAppear();
+        }
+    }
     
     void RandomAppear()
     {
