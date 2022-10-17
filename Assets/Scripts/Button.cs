@@ -18,6 +18,7 @@ public class Button : MonoBehaviour
     public enum SCENES
     {
         Main,
+        Satou,
     }
 
     /// <summary>
