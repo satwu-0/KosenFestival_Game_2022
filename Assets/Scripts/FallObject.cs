@@ -8,7 +8,6 @@ using DG.Tweening;
 ///</summary>
 public class FallObject : MonoBehaviour
 {
-
     void OnTriggerEnter(Collider other)
     {
         //地面と衝突して消える処理
@@ -20,8 +19,12 @@ public class FallObject : MonoBehaviour
         //プレイヤーと衝突して消える処理
         if(other.gameObject.CompareTag("Player"))
         {
+            if(this.gameObject.name == "Retest(Clone)")
+            {
+                GameObject gameManager = GameObject.Find("GameManager");
+                gameManager.gameObject.GetComponent<GameManager>().IncreaseCredit();
+            }
             Destroy(this.gameObject);
         }
     }
-
 }
