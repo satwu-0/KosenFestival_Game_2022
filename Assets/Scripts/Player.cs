@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 /// <summary>
 /// プレイヤーの動作関係のクラス
 /// </summary>
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private float playerSpeed = 4f;
+    public static float playerSpeed = 4f;
 
-    [SerializeField]
-    private float playerFastSpeed = 8f;
+    public static float playerFastSpeed = 8f;
+
+    float playerNowSpeed;
 
     [SerializeField]
     private float upForce = 350f;
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
     
     private bool isGround;
 
-    float playerNowSpeed;
+
 
     void OnCollisionEnter(Collision other)
     {
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        playerNowSpeed = (Input.GetKey(KeyCode.LeftShift)) ? playerFastSpeed : playerSpeed;
+        playerNowSpeed = StatusModel.NowSpeed;
         MovePlayer();
     }
 
@@ -54,7 +55,7 @@ public class Player : MonoBehaviour
             playerPos.x -= playerNowSpeed * Time.deltaTime;
             //transform.rotation = Quaternion.Euler(0,0,90);
         }
-        if (isGround == true)
+        if(isGround == true)
         {
             if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
             {
