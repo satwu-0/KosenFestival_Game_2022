@@ -46,8 +46,8 @@ MonoBehaviour:
   appearObject: {fileID: 0}
   maxAppearIntervalSeconds: 1
   minAppearIntervalSeconds: 10
-  MinXPosition: -6
-  MaxXPosition: 6
+  minPositionX: -6
+  maxPositionX: 6
 --- !u!1 &2297347662879305212
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,8 +94,8 @@ MonoBehaviour:
   appearObject: {fileID: 0}
   maxAppearIntervalSeconds: 5
   minAppearIntervalSeconds: 7
-  MinXPosition: -6
-  MaxXPosition: 6
+  minPositionX: -6
+  maxPositionX: 6
 --- !u!1 &2297347662883446527
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2297347663018912439}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,8 +246,8 @@ MonoBehaviour:
   appearObject: {fileID: 0}
   maxAppearIntervalSeconds: 1
   minAppearIntervalSeconds: 24
-  MinXPosition: -6
-  MaxXPosition: 6
+  minPositionX: -6
+  maxPositionX: 6
 --- !u!1 &2297347663240865094
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,8 +294,8 @@ MonoBehaviour:
   appearObject: {fileID: 0}
   maxAppearIntervalSeconds: 8
   minAppearIntervalSeconds: 15
-  MinXPosition: -6
-  MaxXPosition: 6
+  minPositionX: -6
+  maxPositionX: 6
 --- !u!1 &2297347664314998160
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,8 +342,8 @@ MonoBehaviour:
   appearObject: {fileID: 0}
   maxAppearIntervalSeconds: 4
   minAppearIntervalSeconds: 12
-  MinXPosition: -6
-  MaxXPosition: 6
+  minPositionX: -6
+  maxPositionX: 6
 --- !u!1 &2297347664511479344
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,8 +390,8 @@ MonoBehaviour:
   appearObject: {fileID: 3743820723999963817, guid: 3915244c0d6675f4796d488908439998, type: 3}
   maxAppearIntervalSeconds: 0
   minAppearIntervalSeconds: 0
-  MinXPosition: -6
-  MaxXPosition: 6
+  minPositionX: 0
+  maxPositionX: 0
 --- !u!1 &2297347664561113841
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,8 +438,8 @@ MonoBehaviour:
   appearObject: {fileID: 0}
   maxAppearIntervalSeconds: 13
   minAppearIntervalSeconds: 22
-  MinXPosition: -6
-  MaxXPosition: 6
+  minPositionX: -6
+  maxPositionX: 6
 --- !u!1 &2297347664627661155
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,8 +486,8 @@ MonoBehaviour:
   appearObject: {fileID: 0}
   maxAppearIntervalSeconds: 3
   minAppearIntervalSeconds: 8
-  MinXPosition: -6
-  MaxXPosition: 6
+  minPositionX: -6
+  maxPositionX: 6
 --- !u!1 &2297347664823480414
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,5 +534,5 @@ MonoBehaviour:
   appearObject: {fileID: 0}
   maxAppearIntervalSeconds: 1
   minAppearIntervalSeconds: 4
-  MinXPosition: -6
-  MaxXPosition: 6
+  minPositionX: -6
+  maxPositionX: 6

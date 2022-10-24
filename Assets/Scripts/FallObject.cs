@@ -19,9 +19,10 @@ public class FallObject : MonoBehaviour
         //プレイヤーと衝突して消える処理
         if(other.gameObject.CompareTag("Player"))
         {
-            if(this.gameObject.name == "Retest(Clone)")
+            if(this.gameObject.CompareTag("Retest"))
             {
-                GameObject gameManager = GameObject.Find("GameManager");
+                //GameObjectはシーン上のオブジェクトなのでSelializefieldは使えない
+                GameObject gameManager = GameObject.FindWithTag("GameManager");
                 gameManager.gameObject.GetComponent<GameManager>().IncreaseCredit();
             }
             Destroy(this.gameObject);

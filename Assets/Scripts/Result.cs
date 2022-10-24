@@ -8,33 +8,26 @@ using UnityEngine.UI;
 ///</summary>
 public class Result : MonoBehaviour
 {
+    //何年生かを表すyear変数をそのまま添え字に使うために要素数が6になっている
     [SerializeField]
-    private Text firstResultCreditText;
-    [SerializeField]
-    private Text secondResultCreditText;
-    [SerializeField]
-    private Text thirdResultCreditText;
-    [SerializeField]
-    private Text fourthResultCreditText;
-    [SerializeField]
-    private Text fifthResultCreditText;
+    private Text[] resultCreditTexts = new Text[6];
 
     [SerializeField]
-    private Text ResultMassageText;
+    private Text resultMassageText;
 
     [SerializeField]
     private string graduationMassage;
     [SerializeField]
     private string heldBackMassage;
     
-    private float[] resultCredit;
+    private float[] resultCredits;
     private int year;
     private bool isGraduate;
  
     void Start()
     {
         Time.timeScale = 1;
-        resultCredit = GameManager.GetCredit();
+        resultCredits = GameManager.GetCredit();
         isGraduate = GameManager.GetGraduation();
         year = GameManager.GetYear();
         InputResult();
@@ -42,36 +35,19 @@ public class Result : MonoBehaviour
 
     //成績をテキストに入力するメソッド
     private void InputResult(){
-        int i = 1;
-        while(i <= year)
+        for(int i = 1;i <= 5;i++)
         {
-            if(i==1)
-            {
-                firstResultCreditText.text = $"{i}年目…{resultCredit[i]}単位";
+            if(i > year){
+                break;
             }
-            if(i==2)
-            {
-                secondResultCreditText.text = $"{i}年目…{resultCredit[i]}単位";
-            }
-            if(i==3)
-            {
-                thirdResultCreditText.text = $"{i}年目…{resultCredit[i]}単位";
-            }
-            if(i==4)
-            {
-                fourthResultCreditText.text = $"{i}年目…{resultCredit[i]}単位";
-            }
-            if(i==5)
-            {
-                fifthResultCreditText.text = $"{i}年目…{resultCredit[i]}単位";
-            }
+            resultCreditTexts[i].text = $"{i}年目…{resultCredits[i]}単位";
         }
         if(isGraduate)
         {
-            ResultMassageText.text = graduationMassage;
+            resultMassageText.text = graduationMassage;
         }else
         {
-            ResultMassageText.text = heldBackMassage;
+            resultMassageText.text = heldBackMassage;
         }
     }
 }

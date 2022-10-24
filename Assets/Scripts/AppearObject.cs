@@ -14,12 +14,12 @@ public class AppearObject : MonoBehaviour
     [SerializeField]
     private float minAppearIntervalSeconds;
     [SerializeField]
-    private float MinXPosition;
+    private float minPositionX;
     [SerializeField]
-    private float MaxXPosition;
+    private float maxPositionX;
 
-    private const float AppearYPosition = 5f;
-    private float appearXPosition;
+    private const float AppearPositionY = 5f;
+    private float appearPositionX;
 
     private float appearIntervalSeconds;
 
@@ -28,7 +28,7 @@ public class AppearObject : MonoBehaviour
     //アクティブになった時，生成物が単位ならコルーチンを開始，再試なら一度だけ生成を行う
     void OnEnable()
     {
-        if(appearObject.name == "Retest")
+        if(appearObject.CompareTag("Retest"))
         {
             RandomAppear();
         }else{
@@ -54,8 +54,8 @@ public class AppearObject : MonoBehaviour
     ///</summary>
     void RandomAppear()
     {
-        appearXPosition = Random.Range(MinXPosition,MaxXPosition);
-        appearPosition = new Vector2(appearXPosition,AppearYPosition);
+        appearPositionX = Random.Range(minPositionX,maxPositionX);
+        appearPosition = new Vector2(appearPositionX,AppearPositionY);
         Instantiate(appearObject,appearPosition,Quaternion.identity);
     }
     
