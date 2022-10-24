@@ -18,7 +18,7 @@ public class AppearObject : MonoBehaviour
     [SerializeField]
     private float maxPositionX;
 
-    private const float AppearPositionY = 5f;
+    private const float appearPositionY = 5f;
     private float appearPositionX;
 
     private float appearIntervalSeconds;
@@ -55,7 +55,7 @@ public class AppearObject : MonoBehaviour
     void RandomAppear()
     {
         appearPositionX = Random.Range(minPositionX,maxPositionX);
-        appearPosition = new Vector2(appearPositionX,AppearPositionY);
+        appearPosition = new Vector2(appearPositionX,appearPositionY);
         Instantiate(appearObject,appearPosition,Quaternion.identity);
     }
     

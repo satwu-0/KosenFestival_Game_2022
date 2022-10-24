@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     //何年生かを表すyear変数をそのまま添え字に使うために要素数が6になっている
     [SerializeField]
     private float[] maxCredit = new float[6];
+    //何年生かを表すyear変数をそのまま添え字に使うために要素数が6になっている
     [SerializeField]
     private float[] requiredCredit = new float[6];
 
