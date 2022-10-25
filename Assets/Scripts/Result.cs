@@ -20,16 +20,13 @@ public class Result : MonoBehaviour
     [SerializeField]
     private string heldBackMassage;
     
-    private float[] resultCredits;
-    private int year;
-    private bool isGraduate;
+    public float[] resultCredits;
+    public int year;
+    public bool isGraduate;
  
     void Start()
     {
         Time.timeScale = 1;
-        resultCredits = GameManager.GetCredit();
-        isGraduate = GameManager.GetGraduation();
-        year = GameManager.GetYear();
         InputResult();
     }
 

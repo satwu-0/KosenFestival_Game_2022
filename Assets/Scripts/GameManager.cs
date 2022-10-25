@@ -34,15 +34,15 @@ public class GameManager : MonoBehaviour
     private GameObject appearRetest;
 
     private float limitSeconds;
-    private float seconds;
-    private float credit;
+    private float remainSeconds;
+    private float haveCredit;
 
-    public static float[] resultCredit = new float[6];
+    private float[] resultCredit = new float[6];
 
-    public static bool isGraduate;
+    private bool isGraduate;
     private bool isRetest;
 
-    public static int year = 1;
+    private int year = 1;
     private float  delayResultSeconds = 0.5f;
 
 
@@ -51,11 +51,11 @@ public class GameManager : MonoBehaviour
     ///</summary>
     public void DecreaseCredit(float decreaseValue)
     {
-        if(credit - decreaseValue >= 0)
+        if(haveCredit - decreaseValue >= 0)
         {
-            credit -= decreaseValue;
+            haveCredit -= decreaseValue;
         }else{
-            credit = 0;
+            haveCredit = 0;
         }
     }
 
@@ -64,31 +64,7 @@ public class GameManager : MonoBehaviour
     ///</summary>
     public void IncreaseCredit()
     {
-        credit = requiredCredit[year];
-    }
-
-    ///<summary>
-    ///最終的な成績をResultSceneに伝えるメソッド
-    ///</summary>
-    public static float[] GetCredit()
-    {
-        return resultCredit;
-    }
-
-    ///<summary>
-    ///最終的な成績をResultSceneに伝えるメソッド
-    ///</summary>
-    public static bool GetGraduation()
-    {
-        return isGraduate;
-    }
-
-    ///<summary>
-    ///何年生まで到達したかResultSceneに伝えるメソッド
-    ///</summary>
-    public static int GetYear()
-    {
-        return year;
+        haveCredit = requiredCredit[year];
     }
 
     ///<summary>
@@ -96,15 +72,32 @@ public class GameManager : MonoBehaviour
     ///</summary>
     private IEnumerator ChangeResult()
     {
+
         yield return new WaitForSecondsRealtime(delayResultSeconds);
+        sendVariable();
         SceneManager.LoadScene("Result");
     }
 
+    //Resultシーンに変数を渡すメソッド
+    private void sendVariable()
+    {
+        Scene resultScene = SceneManager.GetSceneByName("Result");
+        GameObject[] gameObject = resultScene.GetRootGameObjects();
+        foreach(GameObject go in gameObject)
+        {
+            if(go.CompareTag("ResultManager")){
+                go.GetComponent<Result>().resultCredits = resultCredit;
+                go.GetComponent<Result>().year = year;
+                go.GetComponent<Result>().isGraduate = isGraduate;
+                break;
+            }
+        }
+    }
 
     void Start()
     {
         limitSeconds = limitSecondsLength;
-        credit = maxCredit[year];
+        haveCredit = maxCredit[year];
         appearRetest.SetActive(false);
         isRetest = false;
     }
@@ -112,24 +105,24 @@ public class GameManager : MonoBehaviour
     void FixedUpdate()
     {
         limitSeconds -= Time.deltaTime;
-        seconds = limitSeconds;
-        timerText.text = $"{seconds:F0}"; 
+        remainSeconds = limitSeconds;
+        timerText.text = $"{remainSeconds:F0}"; 
 
-        creditText.text = $"{credit:F0}/{requiredCredit[year]:F0}";
+        creditText.text = $"{haveCredit:F0}/{requiredCredit[year]:F0}";
 
-        if(seconds <= stopAppearSeconds){
+        if(remainSeconds <= stopAppearSeconds){
             appearCreditParent.SetActive(false);
         }
 
-        if(seconds <= appearRetestSeconds && credit < requiredCredit[year] && !isRetest){
+        if(remainSeconds <= appearRetestSeconds && haveCredit < requiredCredit[year] && !isRetest){
             appearRetest.SetActive(true);
             appearRetest.SetActive(false);
             isRetest = true;
         }
 
-        if(seconds <= 0){
-            resultCredit[year] = credit;
-            if(credit < requiredCredit[year])
+        if(remainSeconds <= 0){
+            resultCredit[year] = haveCredit;
+            if(haveCredit < requiredCredit[year])
             {
                 Time.timeScale = 0;
                 isGraduate = false;
@@ -138,7 +131,7 @@ public class GameManager : MonoBehaviour
             {
                 year++;
                 limitSeconds = limitSecondsLength;
-                credit = maxCredit[year];
+                haveCredit = maxCredit[year];
                 appearCreditParent.SetActive(true);
                 isRetest = false;
             }else
