@@ -8,9 +8,12 @@ using UniRx;
 /// </summary>
 public class Player : MonoBehaviour
 {
-    public static float playerSpeed = 4f;
+    [SerializeField]
+    private StatusModel SM;
 
-    public static float playerFastSpeed = 8f;
+    public float playerSpeed = 4f;
+
+    public float playerFastSpeed = 8f;
 
     float playerNowSpeed;
 
@@ -34,7 +37,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        playerNowSpeed = StatusModel.NowSpeed;
+        playerNowSpeed = SM.NowSpeed;
         MovePlayer();
     }
 
@@ -55,7 +58,7 @@ public class Player : MonoBehaviour
             playerPos.x -= playerNowSpeed * Time.deltaTime;
             //transform.rotation = Quaternion.Euler(0,0,90);
         }
-        if(isGround == true)
+        if(isGround)
         {
             if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
             {

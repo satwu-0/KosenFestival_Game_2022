@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288465b808587aa45b6011b7dff44722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SM: {fileID: 135577103}
   playerSpeed: 5
   playerFastSpeed: 7
   upForce: 400
@@ -142,6 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cead8ae07162e024489175da75897b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 2714724501031699069}
+  NowSpeed: 4
   staminaMax: 200
   staminaRP:
     value: 200

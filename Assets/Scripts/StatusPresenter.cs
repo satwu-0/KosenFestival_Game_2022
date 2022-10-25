@@ -8,9 +8,11 @@ using UniRx;
 /// </summary>
 public class StatusPresenter : MonoBehaviour
 {
-    public StatusModel model;
+    [SerializeField]
+    private StatusModel model;
     
-    public ParameterBarView staminaView;
+    [SerializeField]
+    private ParameterBarView staminaView;
 
     void Awake()
     {

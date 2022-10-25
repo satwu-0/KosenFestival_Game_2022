@@ -7,7 +7,8 @@ using UnityEngine;
 /// </summary>
 public class ParameterBarView : MonoBehaviour
 {
-    public RectTransform valueRect;
+    [SerializeField]
+    private RectTransform valueRect;
 
     public void SetRate(int max, int value)
     {

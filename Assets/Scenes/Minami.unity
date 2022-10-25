@@ -130,22 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 135577103, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
-      propertyPath: P
-      value: 
-      objectReference: {fileID: 484164018}
-    - target: {fileID: 135577103, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
-      propertyPath: playerNowSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 135577103, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
-      propertyPath: staminaRP.value
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2714724501031699069, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
-      propertyPath: Status
-      value: 
-      objectReference: {fileID: 135577103}
     - target: {fileID: 4446854516029227302, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -205,17 +189,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cead8ae07162e024489175da75897b84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &484164018 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2714724501031699069, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
-  m_PrefabInstance: {fileID: 135577101}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 288465b808587aa45b6011b7dff44722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &872942372

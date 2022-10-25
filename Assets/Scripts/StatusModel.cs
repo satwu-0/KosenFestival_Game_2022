@@ -9,9 +9,15 @@ using UniRx;
 /// </summary>
 public class StatusModel : MonoBehaviour
 {
-    public static float NowSpeed = 4f;
+    [SerializeField]
+    private Player player;
+
+    public float NowSpeed = 4f;
+
     public int staminaMax = 100;
+
     public IntReactiveProperty staminaRP = new IntReactiveProperty();
+    
     public int Stamina
     {
         get {return staminaRP.Value;}
@@ -23,12 +29,12 @@ public class StatusModel : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift) && Input.GetAxisRaw("Horizontal") != 0 && staminaRP.Value >= 2)
         {
             staminaRP.Value -= 2;
-            NowSpeed = Player.playerFastSpeed;
+            NowSpeed = player.playerFastSpeed;
         }
         else if(staminaRP.Value < 200)
         {
             staminaRP.Value++;
-            NowSpeed = Player.playerSpeed;
+            NowSpeed = player.playerSpeed;
         }
     }
     
