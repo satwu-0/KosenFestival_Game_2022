@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 465819319831092312}
   - component: {fileID: 7549794762804099701}
   - component: {fileID: 2714724501031699069}
+  - component: {fileID: 135577103}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +126,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288465b808587aa45b6011b7dff44722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 4
-  playerFastSpeed: 8
-  upForce: 350
+  SM: {fileID: 135577103}
+  playerSpeed: 5
+  playerFastSpeed: 7
+  upForce: 400
   rb: {fileID: 7549794762804099701}
+--- !u!114 &135577103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559106379370710856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cead8ae07162e024489175da75897b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2714724501031699069}
+  NowSpeed: 4
+  staminaMax: 200
+  staminaRP:
+    value: 200
