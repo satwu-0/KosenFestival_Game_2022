@@ -8,6 +8,7 @@ TagManager:
   - Retest
   - GameManager
   - ResultManager
+  - Credit
   layers:
   - Default
   - TransparentFX

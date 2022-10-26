@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     private Text timerText;
     [SerializeField]
     private Text creditText;
+    [SerializeField]
+    private GameObject sceneLoader;
 
     [SerializeField]
     private  float limitSecondsLength;
@@ -68,30 +70,12 @@ public class GameManager : MonoBehaviour
     }
 
     ///<summary>
-    ///ResultSceneに移動するまでに少し間をおくコルーチン
+    ///ResultSceneに移動し，変数を渡すメソッド
     ///</summary>
-    private IEnumerator ChangeResult()
+    public async void ChangeResult()
     {
-
-        yield return new WaitForSecondsRealtime(delayResultSeconds);
-        sendVariable();
-        SceneManager.LoadScene("Result");
-    }
-
-    //Resultシーンに変数を渡すメソッド
-    private void sendVariable()
-    {
-        Scene resultScene = SceneManager.GetSceneByName("Result");
-        GameObject[] gameObject = resultScene.GetRootGameObjects();
-        foreach(GameObject go in gameObject)
-        {
-            if(go.CompareTag("ResultManager")){
-                go.GetComponent<Result>().resultCredits = resultCredit;
-                go.GetComponent<Result>().year = year;
-                go.GetComponent<Result>().isGraduate = isGraduate;
-                break;
-            }
-        }
+        var nextScene = await SceneLoader.Load<Result>("Result"); 
+        nextScene.InputResult(resultCredit,year,isGraduate);
     }
 
     void Start()
@@ -126,7 +110,7 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 0;
                 isGraduate = false;
-                StartCoroutine(ChangeResult());
+                Invoke("ChangeResult",delayResultSeconds);
             }else if(year < 5)
             {
                 year++;
@@ -138,7 +122,7 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 0;
                 isGraduate = true;
-                StartCoroutine(ChangeResult());
+                Invoke("ChangeResult",delayResultSeconds);
             }
         }
     }

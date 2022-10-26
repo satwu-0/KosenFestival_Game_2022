@@ -8,6 +8,7 @@ using DG.Tweening;
 ///</summary>
 public class FallObject : MonoBehaviour
 {
+    public float creditValue;
     void OnTriggerEnter(Collider other)
     {
         //地面と衝突して消える処理

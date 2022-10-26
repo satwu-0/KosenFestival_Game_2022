@@ -8,17 +8,15 @@ using UnityEngine;
 public class Ground : MonoBehaviour
 {
     [SerializeField]
-    private GameObject gameManager;
-
-    /*private GameObject credit;
-    private CreditScript creditScript;*/
+    private GameManager gameManager;
 
     private float decreaseValue;
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Credit")){
-            decreaseValue = other.gameObject.GetComponent<Credit>().creditValue;
+            decreaseValue = other.gameObject.GetComponent<FallObject>().creditValue;
+            gameManager.gameObject.GetComponent<GameManager>().DecreaseCredit(decreaseValue);
         }   
-        gameManager.gameObject.GetComponent<GameManager>().DecreaseCredit(decreaseValue);
+        
     }
 }

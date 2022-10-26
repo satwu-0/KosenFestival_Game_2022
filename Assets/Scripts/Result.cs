@@ -27,11 +27,13 @@ public class Result : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
-        InputResult();
     }
 
     //成績をテキストに入力するメソッド
-    private void InputResult(){
+    public void InputResult(float[] _resultCredits,int _year,bool _isGraduate){
+        resultCredits = _resultCredits;
+        year = _year;
+        isGraduate = _isGraduate;
         for(int i = 1;i <= 5;i++)
         {
             if(i > year){
