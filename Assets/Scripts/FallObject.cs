@@ -8,6 +8,13 @@ using DG.Tweening;
 ///</summary>
 public class FallObject : MonoBehaviour
 {
+    //public AudioClip sound1,sound2;
+    //AudioSource audioSource;
+
+    //void Start()
+    //{
+        //audioSource = GetComponent<AudioSource>();    
+    //}
 
     void OnTriggerEnter(Collider other)
     {
@@ -15,12 +22,14 @@ public class FallObject : MonoBehaviour
         if(other.gameObject.CompareTag("Ground"))
         {
             Destroy(this.gameObject);
+            //audioSource.PlayOneShot(sound1);
         }
 
         //プレイヤーと衝突して消える処理
         if(other.gameObject.CompareTag("Player"))
-        {
+        { 
             Destroy(this.gameObject);
+            //audioSource.PlayOneShot(sound2);
         }
     }
 

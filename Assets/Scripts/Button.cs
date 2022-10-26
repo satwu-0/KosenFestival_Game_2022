@@ -13,11 +13,20 @@ public class Button : MonoBehaviour
     float ExpandingScale = 1.1f;
     float ShrinkScale = 1f;
     float ScaleChangeTime = 0.5f;
+    public AudioClip sound1;
+    AudioSource audioSource;
     [SerializeField] private SCENES scene;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public enum SCENES
     {
         Main,
+        Game,
+        Result,
         Satou,
     }
 
@@ -26,6 +35,7 @@ public class Button : MonoBehaviour
     /// </summary>
     public void OnClicked()
     {
+        audioSource.PlayOneShot(sound1);
         transform.DOScale(ExpandingScale,ScaleChangeTime)
         .SetEase(Ease.OutElastic)
         .OnComplete(() => transform.DOScale(ShrinkScale,ScaleChangeTime))
