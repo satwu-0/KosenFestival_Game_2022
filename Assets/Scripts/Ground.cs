@@ -15,7 +15,7 @@ public class Ground : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Credit")){
             decreaseValue = other.gameObject.GetComponent<FallObject>().creditValue;
-            gameManager.gameObject.GetComponent<GameManager>().DecreaseCredit(decreaseValue);
+            gameManager.DecreaseCredit(decreaseValue);
         }   
         
     }
