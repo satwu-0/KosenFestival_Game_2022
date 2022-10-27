@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Retest
+  - GameManager
+  - ResultManager
+  - Credit
   layers:
   - Default
   - TransparentFX

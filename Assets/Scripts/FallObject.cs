@@ -8,14 +8,7 @@ using DG.Tweening;
 ///</summary>
 public class FallObject : MonoBehaviour
 {
-    //public AudioClip sound1,sound2;
-    //AudioSource audioSource;
-
-    //void Start()
-    //{
-        //audioSource = GetComponent<AudioSource>();    
-    //}
-
+    public float creditValue;
     void OnTriggerEnter(Collider other)
     {
         //地面と衝突して消える処理
@@ -27,10 +20,15 @@ public class FallObject : MonoBehaviour
 
         //プレイヤーと衝突して消える処理
         if(other.gameObject.CompareTag("Player"))
-        { 
+        {
+            if(this.gameObject.CompareTag("Retest"))
+            {
+                //GameObjectはシーン上のオブジェクトなのでSelializefieldは使えない
+                GameObject gameManager = GameObject.FindWithTag("GameManager");
+                gameManager.gameObject.GetComponent<GameManager>().IncreaseCredit();
+            }
             Destroy(this.gameObject);
             //audioSource.PlayOneShot(sound2);
         }
     }
-
 }

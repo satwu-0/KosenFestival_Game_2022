@@ -14,10 +14,14 @@ GameObject:
   - component: {fileID: 465819319831092312}
   - component: {fileID: 7549794762804099701}
   - component: {fileID: 2714724501031699069}
+<<<<<<< HEAD
   - component: {fileID: -2686309915419214788}
+=======
+  - component: {fileID: 135577103}
+>>>>>>> 9965164543a4bc9ae9635a8b5fe99e55aa5b5260
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,20 +130,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288465b808587aa45b6011b7dff44722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 4
-  playerFastSpeed: 8
-  upForce: 350
+  SM: {fileID: 135577103}
+  playerSpeed: 5
+  playerFastSpeed: 7
+  upForce: 400
   rb: {fileID: 7549794762804099701}
+<<<<<<< HEAD
   sound1: {fileID: 8300000, guid: 5c431a2e4a2675e44bc84c83a0fb7134, type: 3}
   sound2: {fileID: 8300000, guid: 2e2748b906807504b9293adbcce98622, type: 3}
 --- !u!82 &-2686309915419214788
 AudioSource:
+=======
+--- !u!114 &135577103
+MonoBehaviour:
+>>>>>>> 9965164543a4bc9ae9635a8b5fe99e55aa5b5260
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8559106379370710856}
   m_Enabled: 1
+<<<<<<< HEAD
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -228,3 +239,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cead8ae07162e024489175da75897b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2714724501031699069}
+  NowSpeed: 4
+  staminaMax: 200
+  staminaRP:
+    value: 200
+>>>>>>> 9965164543a4bc9ae9635a8b5fe99e55aa5b5260
