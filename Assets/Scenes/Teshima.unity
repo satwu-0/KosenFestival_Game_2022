@@ -1582,17 +1582,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< HEAD
     - target: {fileID: 2714724501031699069, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
       propertyPath: sound2
       value: 
       objectReference: {fileID: 8300000, guid: 8154212c0bd6f684aacb191326eb3a6b, type: 3}
-=======
-    - target: {fileID: 4393430375064266158, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
->>>>>>> 9965164543a4bc9ae9635a8b5fe99e55aa5b5260
     - target: {fileID: 4446854516029227302, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
       propertyPath: m_RootOrder
       value: 2
