@@ -775,18 +775,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
-<<<<<<< HEAD
 --- !u!1 &728750363
 GameObject:
-=======
---- !u!114 &234690313
-MonoBehaviour:
->>>>>>> 9965164543a4bc9ae9635a8b5fe99e55aa5b5260
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728750367}
@@ -877,28 +871,6 @@ Transform:
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &860861794
-=======
-  m_GameObject: {fileID: 234690308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcbeecbefdd93794da41caa0deabbc89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resultCreditTexts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  resultMassageText: {fileID: 0}
-  graduationMassage: 
-  heldBackMassage: 
-  resultCredits: []
-  year: 0
-  isGraduate: 0
---- !u!1 &270812356
->>>>>>> 9965164543a4bc9ae9635a8b5fe99e55aa5b5260
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
