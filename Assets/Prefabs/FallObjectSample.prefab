@@ -110,12 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca89162462ab854895aed74798e5982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  sound1: {fileID: 8300000, guid: 8154212c0bd6f684aacb191326eb3a6b, type: 3}
-  sound2: {fileID: 8300000, guid: 2e2748b906807504b9293adbcce98622, type: 3}
-=======
   creditValue: 0
->>>>>>> 9965164543a4bc9ae9635a8b5fe99e55aa5b5260
 --- !u!54 &4495358875258051244
 Rigidbody:
   m_ObjectHideFlags: 0
