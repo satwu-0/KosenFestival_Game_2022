@@ -27,6 +27,15 @@ public class Player : MonoBehaviour
 
 
 
+    public AudioClip sound1;
+
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();   
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Ground")
@@ -63,6 +72,7 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
             {
                 isGround = false;
+                audioSource.PlayOneShot(sound1);
                 rb.AddForce(new Vector3(0, upForce, 0));
             }
         }
