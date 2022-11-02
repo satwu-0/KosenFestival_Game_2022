@@ -23,13 +23,18 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Rigidbody rb;
     
+    [SerializeField]
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private RectTransform pict;
+
     private bool isGround;
 
 
 
     public AudioClip sound1;
 
-    AudioSource audioSource;
 
     void Start()
     {
@@ -60,12 +65,12 @@ public class Player : MonoBehaviour
         if(Input.GetAxisRaw("Horizontal") > 0)
         {
             playerPos.x += playerNowSpeed * Time.deltaTime;
-            //transform.rotation = Quaternion.Euler(0,0,270);
+            pict.transform.rotation = Quaternion.Euler(0,180,0);
         } 
         if(Input.GetAxisRaw("Horizontal") < 0)
         {
             playerPos.x -= playerNowSpeed * Time.deltaTime;
-            //transform.rotation = Quaternion.Euler(0,0,90);
+            pict.transform.rotation = Quaternion.Euler(0,0,0);
         }
         if(isGround)
         {

@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: ff21176cf4227be4bb38694226e5e89e
-  - enabled: 1
     path: Assets/Scenes/Satou.unity
     guid: c4ec7f939743e5f45bd9c6ed12d2055a
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 84b3c19601fe3624ab9f3de503f7c527
+  - enabled: 1
+    path: Assets/Scenes/Result.unity
+    guid: d5886687fefbd0740969de01c6ee38ce
   m_configObjects: {}

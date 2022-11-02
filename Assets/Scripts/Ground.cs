@@ -10,6 +10,11 @@ public class Ground : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip sound1;
+
     private float decreaseValue;
     void OnTriggerEnter(Collider other)
     {
@@ -17,6 +22,8 @@ public class Ground : MonoBehaviour
             decreaseValue = other.gameObject.GetComponent<FallObject>().creditValue;
             gameManager.DecreaseCredit(decreaseValue);
         }   
-        
+        if(other.gameObject.CompareTag("Retest")){
+            audioSource.PlayOneShot(sound1);
+        }
     }
 }

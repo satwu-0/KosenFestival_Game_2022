@@ -15,7 +15,6 @@ public class FallObject : MonoBehaviour
         if(other.gameObject.CompareTag("Ground"))
         {
             Destroy(this.gameObject);
-            //audioSource.PlayOneShot(sound1);
         }
 
         //プレイヤーと衝突して消える処理
@@ -28,7 +27,6 @@ public class FallObject : MonoBehaviour
                 gameManager.gameObject.GetComponent<GameManager>().IncreaseCredit();
             }
             Destroy(this.gameObject);
-            //audioSource.PlayOneShot(sound2);
         }
     }
 }

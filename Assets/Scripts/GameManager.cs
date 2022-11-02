@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text creditText;
     [SerializeField]
+    private Text yearText;
+    [SerializeField]
     private GameObject sceneLoader;
 
     [SerializeField]
@@ -35,6 +37,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject appearRetest;
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip sound1;
+    [SerializeField]
+    private AudioClip sound2;
+
+
     private float limitSeconds;
     private float remainSeconds;
     private float haveCredit;
@@ -45,8 +55,6 @@ public class GameManager : MonoBehaviour
     private bool isRetest;
 
     private int year = 1;
-    private float  delayResultSeconds = 0.5f;
-
 
     ///<summary>
     ///所持単位を減らすメソッド
@@ -59,6 +67,7 @@ public class GameManager : MonoBehaviour
         }else{
             haveCredit = 0;
         }
+        audioSource.PlayOneShot(sound1);
     }
 
     ///<summary>
@@ -67,6 +76,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseCredit()
     {
         haveCredit = requiredCredit[year];
+        audioSource.PlayOneShot(sound2);
     }
 
     ///<summary>
@@ -90,9 +100,11 @@ public class GameManager : MonoBehaviour
     {
         limitSeconds -= Time.deltaTime;
         remainSeconds = limitSeconds;
-        timerText.text = $"{remainSeconds:F0}"; 
+        timerText.text = $"{remainSeconds:F2}"; 
 
         creditText.text = $"{haveCredit:F0}/{requiredCredit[year]:F0}";
+
+        yearText.text = $"{year}年目";
 
         if(remainSeconds <= stopAppearSeconds){
             appearCreditParent.SetActive(false);
@@ -110,7 +122,7 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 0;
                 isGraduate = false;
-                Invoke("ChangeResult",delayResultSeconds);
+                ChangeResult();
             }else if(year < 5)
             {
                 year++;
@@ -122,7 +134,7 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 0;
                 isGraduate = true;
-                Invoke("ChangeResult",delayResultSeconds);
+                ChangeResult();
             }
         }
     }
