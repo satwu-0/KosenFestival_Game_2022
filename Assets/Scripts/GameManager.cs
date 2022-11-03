@@ -40,9 +40,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
     [SerializeField]
-    private AudioClip sound1;
+    private AudioClip decreaseCreditSound;
     [SerializeField]
-    private AudioClip sound2;
+    private AudioClip getRetestSound;
 
 
     private float limitSeconds;
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         }else{
             haveCredit = 0;
         }
-        audioSource.PlayOneShot(sound1);
+        audioSource.PlayOneShot(decreaseCreditSound);
     }
 
     ///<summary>
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     public void IncreaseCredit()
     {
         haveCredit = requiredCredit[year];
-        audioSource.PlayOneShot(sound2);
+        audioSource.PlayOneShot(getRetestSound);
     }
 
     ///<summary>

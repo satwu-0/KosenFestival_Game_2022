@@ -27,13 +27,13 @@ public class Player : MonoBehaviour
     private AudioSource audioSource;
 
     [SerializeField]
-    private RectTransform pict;
+    private RectTransform appearance;
 
     private bool isGround;
 
+    private int rightWardRotationY = 180;
 
-
-    public AudioClip sound1;
+    public AudioClip jumpSound;
 
 
     void Start()
@@ -65,19 +65,19 @@ public class Player : MonoBehaviour
         if(Input.GetAxisRaw("Horizontal") > 0)
         {
             playerPos.x += playerNowSpeed * Time.deltaTime;
-            pict.transform.rotation = Quaternion.Euler(0,180,0);
+            appearance.transform.rotation = Quaternion.Euler(0,rightWardRotationY,0);
         } 
         if(Input.GetAxisRaw("Horizontal") < 0)
         {
             playerPos.x -= playerNowSpeed * Time.deltaTime;
-            pict.transform.rotation = Quaternion.Euler(0,0,0);
+            appearance.transform.rotation = Quaternion.Euler(0,0,0);
         }
         if(isGround)
         {
             if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
             {
                 isGround = false;
-                audioSource.PlayOneShot(sound1);
+                audioSource.PlayOneShot(jumpSound);
                 rb.AddForce(new Vector3(0, upForce, 0));
             }
         }

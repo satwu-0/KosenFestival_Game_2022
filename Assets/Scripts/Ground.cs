@@ -13,7 +13,7 @@ public class Ground : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
     [SerializeField]
-    private AudioClip sound1;
+    private AudioClip fallRetestSound;
 
     private float decreaseValue;
     void OnTriggerEnter(Collider other)
@@ -23,7 +23,7 @@ public class Ground : MonoBehaviour
             gameManager.DecreaseCredit(decreaseValue);
         }   
         if(other.gameObject.CompareTag("Retest")){
-            audioSource.PlayOneShot(sound1);
+            audioSource.PlayOneShot(fallRetestSound);
         }
     }
 }

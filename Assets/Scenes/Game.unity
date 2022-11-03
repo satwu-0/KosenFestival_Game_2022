@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1236168321}
   audioSource: {fileID: 550694781}
-  sound1: {fileID: 8300000, guid: 1a0412bfe7e064e47aca0c138cc24c51, type: 3}
+  fallRetestSound: {fileID: 8300000, guid: 1a0412bfe7e064e47aca0c138cc24c51, type: 3}
 --- !u!82 &550694781
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1539,6 +1539,14 @@ PrefabInstance:
       propertyPath: upForce
       value: 1200
       objectReference: {fileID: 0}
+    - target: {fileID: 2714724501031699069, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c431a2e4a2675e44bc84c83a0fb7134, type: 3}
+    - target: {fileID: 2714724501031699069, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
+      propertyPath: appearance
+      value: 
+      objectReference: {fileID: 1667653481}
     - target: {fileID: 2714724501031699069, guid: f541a7660ede44a4582dcee59ba94d03, type: 3}
       propertyPath: audioSource
       value: 
@@ -2476,6 +2484,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 206117137}
     - target: {fileID: 2297347663018912439, guid: 5bd3914cf41dc884087a26a572892a34, type: 3}
+      propertyPath: getRetestSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e2748b906807504b9293adbcce98622, type: 3}
+    - target: {fileID: 2297347663018912439, guid: 5bd3914cf41dc884087a26a572892a34, type: 3}
       propertyPath: stopAppearSeconds
       value: 7
       objectReference: {fileID: 0}
@@ -2483,6 +2495,10 @@ PrefabInstance:
       propertyPath: appearRetestSeconds
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2297347663018912439, guid: 5bd3914cf41dc884087a26a572892a34, type: 3}
+      propertyPath: decreaseCreditSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8154212c0bd6f684aacb191326eb3a6b, type: 3}
     - target: {fileID: 2297347663170548810, guid: 5bd3914cf41dc884087a26a572892a34, type: 3}
       propertyPath: canvas
       value: 
