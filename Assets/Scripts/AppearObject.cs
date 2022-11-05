@@ -47,7 +47,7 @@ public class AppearObject : MonoBehaviour
     {
         while(true)
         {
-            appearIntervalSeconds = Random.Range(minAppearIntervalSeconds,maxAppearIntervalSeconds);
+            appearIntervalSeconds = Random.Range(minAppearIntervalSeconds, maxAppearIntervalSeconds);
             yield return new WaitForSeconds (appearIntervalSeconds);
             RandomAppear();
         }
@@ -58,10 +58,9 @@ public class AppearObject : MonoBehaviour
     ///</summary>
     void RandomAppear()
     {
-        var parent = canvas.transform;
-        appearPositionX = Random.Range(minPositionX,maxPositionX);
-        appearPosition = new Vector3(appearPositionX,appearPositionY,appearPositionZ);
-        Instantiate(appearObject,appearPosition,Quaternion.identity,parent);
+        appearPositionX = Random.Range(minPositionX, maxPositionX);
+        appearPosition = new Vector3(appearPositionX, appearPositionY, appearPositionZ);
+        Instantiate(appearObject, appearPosition, Quaternion.identity, canvas.transform);
     }
     
 }

@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
     public async void ChangeResult()
     {
         var nextScene = await SceneLoader.Load<Result>("Result"); 
-        nextScene.InputResult(resultCredit,year,isGraduate);
+        nextScene.InputResult(resultCredit, year, isGraduate);
     }
 
     void Start()

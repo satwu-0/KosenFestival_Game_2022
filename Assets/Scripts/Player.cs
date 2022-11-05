@@ -65,12 +65,12 @@ public class Player : MonoBehaviour
         if(Input.GetAxisRaw("Horizontal") > 0)
         {
             playerPos.x += playerNowSpeed * Time.deltaTime;
-            appearance.transform.rotation = Quaternion.Euler(0,rightWardRotationY,0);
+            appearance.transform.rotation = Quaternion.Euler(0, rightWardRotationY, 0);
         } 
         if(Input.GetAxisRaw("Horizontal") < 0)
         {
             playerPos.x -= playerNowSpeed * Time.deltaTime;
-            appearance.transform.rotation = Quaternion.Euler(0,0,0);
+            appearance.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if(isGround)
         {
