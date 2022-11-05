@@ -39,7 +39,7 @@ public class Result : MonoBehaviour
             if(i > year){
                 break;
             }
-            resultCreditTexts[i].text = $"{i}年目…{resultCredits[i]}単位";
+            resultCreditTexts[i].text = $"・{i}年目…{resultCredits[i]}単位";
         }
         if(isGraduate)
         {

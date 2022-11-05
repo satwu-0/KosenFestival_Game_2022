@@ -18,12 +18,16 @@ public class AppearObject : MonoBehaviour
     [SerializeField]
     private float maxPositionX;
 
+    [SerializeField]
+    private GameObject canvas;
+
     private const float appearPositionY = 5f;
+    private const float appearPositionZ = 91f;
     private float appearPositionX;
 
     private float appearIntervalSeconds;
 
-    private Vector2 appearPosition;
+    private Vector3 appearPosition;
 
     //アクティブになった時，生成物が単位ならコルーチンを開始，再試なら一度だけ生成を行う
     void OnEnable()
@@ -43,7 +47,7 @@ public class AppearObject : MonoBehaviour
     {
         while(true)
         {
-            appearIntervalSeconds = Random.Range(minAppearIntervalSeconds,maxAppearIntervalSeconds);
+            appearIntervalSeconds = Random.Range(minAppearIntervalSeconds, maxAppearIntervalSeconds);
             yield return new WaitForSeconds (appearIntervalSeconds);
             RandomAppear();
         }
@@ -54,9 +58,9 @@ public class AppearObject : MonoBehaviour
     ///</summary>
     void RandomAppear()
     {
-        appearPositionX = Random.Range(minPositionX,maxPositionX);
-        appearPosition = new Vector2(appearPositionX,appearPositionY);
-        Instantiate(appearObject,appearPosition,Quaternion.identity);
+        appearPositionX = Random.Range(minPositionX, maxPositionX);
+        appearPosition = new Vector3(appearPositionX, appearPositionY, appearPositionZ);
+        Instantiate(appearObject, appearPosition, Quaternion.identity, canvas.transform);
     }
     
 }
